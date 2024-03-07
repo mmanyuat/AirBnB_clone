@@ -2,7 +2,7 @@
 """ Importing uuid_module to access the uuid4 function"""
 import uuid
 """ Importing datetime module specially datetime class"""
-
+from datetime import datetime
 
 class BaseModel:
     """
@@ -28,7 +28,7 @@ class BaseModel:
         """ Method that converts instance attributes into a dictionary"""
 
         obj_dict = self.__dict__.copy()
-        obj_dict = ['__class__'] = self.__class__.__name__
-        obj_dict = ['created_at'] = self.created.isoformat()
-        obj_dict = ['updated_at'] = self.updated.isoformat()
+        obj_dict ['__class__'] = self.__class__.__name__
+        obj_dict ['created_at'] = self.created_at.isoformat()
+        obj_dict ['updated_at'] = self.updated_at.isoformat()
         return obj_dict
