@@ -3,7 +3,6 @@
 import json
 from models.base_model import BaseModel
 
-
 class FileStorage:
     """ A class that serialises instance to json and deserialise instance"""
     __file_path = "file.json"
@@ -15,7 +14,7 @@ class FileStorage:
 
     def new(self, obj):
         """ sets the dictionay with <obj class name> """
-        key = "{}.{}".format(obj.__class__name__, obj.id)
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = obj
 
     def save(self):

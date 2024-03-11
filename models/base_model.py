@@ -2,7 +2,6 @@
 """ Importing uuid_module to access the uuid4 function & importing datetime"""
 import uuid
 from datetime import datetime
-from models import storage
 
 
 def set_attribute(obj, key, value):
@@ -19,6 +18,7 @@ class BaseModel:
     """
     def __init__(self, *args, **kwargs):
         """ the class constructor """
+        from models import storage
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
@@ -35,6 +35,7 @@ class BaseModel:
 
     def save(self):
         """Method that updates time to the current datetime"""
+        from models import storage
 
         self.updated_at = datetime.now()
         storage.save()
