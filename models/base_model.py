@@ -18,7 +18,6 @@ class BaseModel:
     """
     def __init__(self, *args, **kwargs):
         """ the class constructor """
-        from models import storage
         if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
